@@ -8,6 +8,7 @@ config/config.yml.erb
 config/deploy.rb
 config/deploy
 config/mongoid.yml
+config/nginx.erb
 config/newrelic.yml
 .rvmrc
 .idea
