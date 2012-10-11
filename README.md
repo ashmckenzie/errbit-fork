@@ -1,7 +1,10 @@
-# Errbit [![TravisCI][travis-img-url]][travis-ci-url]
+# Errbit [![TravisCI][travis-img-url]][travis-ci-url] [![Code Climate][codeclimate-img-url]][codeclimate-url]
 
 [travis-img-url]: https://secure.travis-ci.org/errbit/errbit.png?branch=master
 [travis-ci-url]: http://travis-ci.org/errbit/errbit
+[codeclimate-img-url]: https://codeclimate.com/badge.png
+[codeclimate-url]: https://codeclimate.com/github/errbit/errbit
+
 
 ### The open source, self-hosted error catcher
 
@@ -57,12 +60,17 @@ If this doesn't sound like you, you should probably stick with [Airbrake](http:/
 The [Thoughtbot](http://thoughtbot.com) guys offer great support for it and it is much more worry-free.
 They have a free package and even offer a *"Airbrake behind your firewall"* solution.
 
+Mailing List
+------------
+
+Join the Google Group at https://groups.google.com/group/errbit to receive updates and notifications.
+
 Demo
 ----
 
 There is a demo available at [http://errbit-demo.herokuapp.com/](http://errbit-demo.herokuapp.com/)
 
-Email: demo@errbit-demo.herokuapp.com
+Email: demo@errbit-demo.herokuapp.com<br/>
 Password: password
 
 Installation
@@ -145,9 +153,6 @@ git clone http://github.com/errbit/errbit.git
 gem install heroku
 heroku create example-errbit --stack cedar
 heroku addons:add mongolab:starter
-cp -f config/mongoid.mongolab.yml config/mongoid.yml
-git add -f config/mongoid.yml
-git commit -m "Added mongoid config for Mongolab"
 heroku addons:add sendgrid:starter
 heroku config:add HEROKU=true
 heroku config:add ERRBIT_HOST=some-hostname.example.com
@@ -168,7 +173,7 @@ heroku run rake db:seed
     ```bash
     # Install the heroku scheduler add-on
     heroku addons:add scheduler:standard
-    
+
     # Go open the dashboard to schedule the job.  You should use
     # 'rake errbit:db:clear_resolved' as the task command, and schedule it
     # at whatever frequency you like (once/day should work great).
@@ -383,6 +388,23 @@ or you can set up the GitHub Issues tracker for your **Self.Errbit** app:
 
   * You can now easily post bug reports to GitHub Issues by clicking the **Create Issue** button on a **Self.Errbit** error.
 
+
+Use Errbit with applications written in other languages
+-------------------------------------------------------
+
+In theory, any Airbrake-compatible error catcher for other languages should work with Errbit.
+Solutions known to work are listed below:
+
+<table>
+  <tr>
+    <th>PHP (&gt;= 5.3)</th>
+    <td>https://github.com/flippa/errbit-php</td>
+  </tr>
+  <tr>
+    <th>Python</th>
+    <td>https://github.com/mkorenkov/errbit.py , https://github.com/pulseenergy/airbrakepy</td>
+  </tr>
+</table>
 
 TODO
 ----
