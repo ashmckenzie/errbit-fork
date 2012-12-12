@@ -81,10 +81,11 @@ group :development, :test do
     #gem 'pry-rails'
   end
 #  gem 'rpm_contrib'
-  gem 'newrelic_rpm'
   gem 'capistrano'
   gem 'capistrano_colors'
 end
+
+gem 'newrelic_rpm'
 
 gem 'foreman', :group => :development
 
